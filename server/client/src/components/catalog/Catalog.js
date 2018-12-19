@@ -4,11 +4,11 @@ import CatalogItem from '../catalogItem/CatalogItem';
 
 const Catalog = props => (
     <div className="catalog">
-        <h1>Catalog</h1>
         {
             props.products.map( product => {
                 return (
                     <CatalogItem
+                        key={product.productID}
                         productID={product.productID}
                         productName={product.productName}
                         productDescription={product.productDescription}

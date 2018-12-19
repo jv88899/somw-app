@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Catalog from './catalog/Catalog';
+import './app.css';
 
 class App extends Component {
     state = {
