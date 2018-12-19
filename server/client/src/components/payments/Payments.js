@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import CatalogItem from '../catalogItem/CatalogItem';
 
 class Payments extends Component {
     render() {
@@ -10,7 +11,11 @@ class Payments extends Component {
                 amount={this.props.amount}
                 billingAddress={true}
                 shippingAddress={true}
-                token={token => console.log(token)}
+                token={
+                    (token, customerInfo) => {
+                        console.log(token, customerInfo);
+                    }
+                }
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
             >
                 <button className="buy-now">Buy Now</button>
